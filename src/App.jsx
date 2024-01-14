@@ -4,13 +4,16 @@ import { NewTodoForm } from "./NewTodoForm";
 import { TodoList } from "./TodoList";
 
 export default function App() {
+  // state to manage the list of todos
    const [todos, setTodos] = useState(() => {
+    // get todos from local storage
     const localValue = localStorage.getItem("ITEMS")
     if(localValue == null) return []
     
     return JSON.parse(localValue)
    });
 
+   // update local storage whenever the todos state changes
    useEffect(() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
    }, [todos]);
