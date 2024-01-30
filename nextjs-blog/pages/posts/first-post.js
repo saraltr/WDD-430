@@ -1,12 +1,13 @@
 import Link from "next/link"
 import Head from "next/head"
+import Layout from "../../components/layout"
 
 // next/script is an extension of the HTML <script> element and optimizes when additional scripts are fetched and executed.
 import Script from "next/script"
 
 export default function FirstPost() {
     return (
-        <>
+        <Layout>
             <Head>
                 <title>First Post</title>
                 <Script
@@ -25,6 +26,6 @@ export default function FirstPost() {
             <h2>
                 <Link href="/">Back to home</Link>
             </h2>
-        </>
+        </Layout>
     )
 }
